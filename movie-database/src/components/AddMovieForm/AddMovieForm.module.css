@@ -1,0 +1,68 @@
+/* Small Screen */
+.container {
+  margin: 1rem;
+}
+
+.addmovieform {
+  display: flex;
+  flex-direction: column;
+}
+
+.addmovieform_form {
+  display: flex;
+  flex-direction: column;
+}
+
+.addmovieform_title {
+  margin-bottom: 1rem;
+  font-size: 2.44rem;
+  color: #4361ee;
+}
+
+.addmovieform_left {
+  margin-bottom: 1rem;
+}
+
+.addmovieform_right {
+  margin-bottom: 1rem;
+}
+
+.addmovieform_image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 25px;
+}
+
+.addmovieform_input {
+  margin-bottom: 1rem;
+}
+
+.addmovieform_buton {
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #4361ee;
+  color: #fff;
+}
+
+/* Large Screen */
+@media (min-width: 992px) {
+  .container {
+    max-width: 1000px;
+    margin: 3rem auto;
+  }
+
+  .addmovieform {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .addmovieform_left {
+    flex-basis: 40%;
+  }
+
+  .addmovieform_right {
+    flex-basis: 40%;
+  }
+}
