@@ -1,4 +1,5 @@
 // Import Halaman Home
+import Counter from "./components/Counter/Counter";
 import Home from "./pages/Home";
 
 function App() {
