@@ -33,8 +33,15 @@
   border-radius: 25px;
 }
 
+.addmovieform_label {
+  margin-bottom: 1rem;
+}
+
 .addmovieform_input {
   margin-bottom: 1rem;
+  padding: 0.5rem 0.5rem;
+  border-radius: 10px;
+  border: 1px solid #64748b;
 }
 
 .addmovieform_buton {
@@ -43,6 +50,9 @@
   border-radius: 10px;
   background-color: #4361ee;
   color: #fff;
+  display: block;
+  margin: 0 auto;
+  width: 100%;
 }
 
 /* Large Screen */
