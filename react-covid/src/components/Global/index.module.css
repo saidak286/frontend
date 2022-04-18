@@ -1,0 +1,49 @@
+/* Small Screen */
+.container {
+    margin: 1rem;
+}
+
+.global {
+  margin: 5rem 0;
+  text-align: center;
+}
+
+.global__title {
+  margin-bottom: 1rem;
+  font-size: 61px;
+  color: #06D6A0;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.global__subtitle {
+  color: #118AB2;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+}
+
+.global__container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Medium Screen */
+@media screen and (min-width: 768px) {
+    .global__container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+}
+
+/* Large Screen */
+@media (min-width: 992px) {
+    .container {
+      max-width: 1200px;
+      margin: 3rem auto;
+    }
+}
