@@ -59,28 +59,30 @@ function Form(props) {
             setIsStatusError(false);
             setIsJumlahError(false)
         
-        /**
-         * Menambahkan movie ke state province
-         * spread operator: copy dan merge array
-         */
-        setProvinces([...provinces, movie]);
+            /**
+             * Menambahkan movie ke state province
+             * spread operator: copy dan merge array
+             */
+            setProvinces([...provinces, movie]);
+
+
+            //Find index of specific object using findIndex method.    
+            const objIndex = provinces.findIndex((obj => obj.kota === provinsi));
+
+            //Log object to Console.
+            console.log("Before update: ", provinces[objIndex]);
+
+            //Update object's name property.
+            provinces[objIndex][status] = jumlah;
+
+            //Log object to console again.
+            console.log("After update: ", provinces[objIndex]);
+
+            console.log(data);
+
+            setProvinces([...provinces]);
+            
         }
-
-        //Find index of specific object using findIndex method.    
-        const objIndex = provinces.findIndex((obj => obj.kota === provinsi));
-
-        //Log object to Console.
-        console.log("Before update: ", provinces[objIndex]);
-
-        //Update object's name property.
-        provinces[objIndex][status] = jumlah;
-
-        //Log object to console again.
-        console.log("After update: ", provinces[objIndex]);
-
-        console.log(data);
-        
-        setProvinces([...provinces]);
     }
 
     return (
