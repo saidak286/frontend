@@ -108,7 +108,7 @@ function Form(props) {
                         Jika error title true: muncul error 
                         Jika tidak, munculkan string kosong  
                         */}
-                        {isProvinsiError && <Alert>Title Wajib Diisi </Alert>}
+                        {isProvinsiError && <Alert>Provinsi Wajib Diisi </Alert>}
                     </div>
                     <div className={styles.form__covid}>
                         <label className={styles.form__label}>Status</label>
@@ -123,7 +123,7 @@ function Form(props) {
                         Jika error title true: muncul error 
                         Jika tidak, munculkan string kosong  
                         */}
-                        {isStatusError && <Alert>Title Wajib Diisi </Alert>}
+                        {isStatusError && <Alert>Status Wajib Diisi </Alert>}
                     </div>
                     <div className={styles.form__covid}>
                         <label className={styles.form__label}>Jumlah</label>
@@ -132,7 +132,7 @@ function Form(props) {
                         Jika error title true: muncul error 
                         Jika tidak, munculkan string kosong  
                         */}
-                        {isJumlahError && <Alert>Title Wajib Diisi </Alert>}
+                        {isJumlahError && <Alert>Jumlah Wajib Diisi </Alert>}
                     </div>
                     <div>
                         <button className={styles.form__button}>Submit</button>
