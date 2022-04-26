@@ -25,6 +25,11 @@
   margin-bottom: 1rem;
 }
 
+.navbar__link {
+  color: #fff;
+  text-decoration: none;
+}
+
 /* Medium Screen */
 @media (min-width: 768px) {
   .navbar {

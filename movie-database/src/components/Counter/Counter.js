@@ -1,26 +1,34 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Counter() {
     /**
-     * Membuat variable state
-     * mengembalikan 2 data:
-     * nilai saat ini: 0
-     * fungsi untuk mengubah state
+     * useState mengembalikan sepasang value (array): [0, function()]
      */
-    const [hasil, setHasil] = useState(0);
+    const [angka, setAngka] = useState(0);
 
-    function tambah() {
-        /**
-         * jalankan fungsi setHasil
-         * untuk mengubah state
-    ]    */
-        setHasil(hasil + 1);
+    function addAngka() {
+        setAngka(angka + 1);
+        console.log(angka);
     }
+
+    /**
+     * useEffect dijalankan pada lifecycle mount dan update 
+     */
+    function updateDOM() {
+        console.log("Lifecycle: Component dimount");
+        // Melakukan side effect: mengakses DOM
+        document.title = `Hasil: ${angka}`;
+    }
+
+    useEffect(updateDOM, [angka]);
+
+    console.log("Lifecycle: Component dirender");
 
     return (
         <div>
-            <p>Hasil: {hasil}</p>
-            <button onClick={tambah}>Add</button>
+            <p>Hasil: {angka}</p>
+            {/* Menambahkan event onClick */}
+            <button onClick={addAngka}>Add</button>
         </div>
     )
 }
