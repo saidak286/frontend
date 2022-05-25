@@ -1,6 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
+import Button from "../UI/Button";
 import styles from "./Hero.module.css";
+import StyledHero from "./Hero.Styled";
 
 function Hero() {
   // Membuat state movie
@@ -19,23 +21,22 @@ function Hero() {
   console.log(movie);
 
   return (
-    <div className={styles.container}>
-      <section className={styles.hero}>
+    <StyledHero>
+      <section>
         <div className={styles.hero__left}>
-          <h2 className={styles.hero__title}>{movie.Title}</h2>
-          <h3 className={styles.hero__genre}>Genre: {movie.Genre}</h3>
-          <p className={styles.hero__description}>{movie.Plot}</p>
-          <button className={styles.hero__button}>Watch</button>
+          <h2>{movie.Title}</h2>
+          <h3>Genre: {movie.Genre}</h3>
+          <p>{movie.Plot}</p>
+          <Button varriant="primary">Watch Movie</Button>
         </div>
         <div className="hero__right">
           <img
-            className={styles.hero__image}
             src={movie.Poster}
             alt={movie.Title}
           />
         </div>
       </section>
-    </div>
+    </StyledHero>
   );
 }
 
