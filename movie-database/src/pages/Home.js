@@ -4,7 +4,7 @@ import Movies from "../components/Movies/Movies";
 import AMF from "../components/AddMovieForm/AddMovieForm";
 import { useState } from "react";
 import data from "../components/utils/constant/data";
-import Counter from "../components/Counter/Counter";
+// import Counter from "../components/Counter/Counter";
 
 /**
  * Membuat Component Home.
