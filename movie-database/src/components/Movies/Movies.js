@@ -1,10 +1,14 @@
 import Movie from "../Movie/Movie";
 import styles from "./Movies.module.css";
 import { nanoid } from "nanoid";
+import { useSelector } from "react-redux";
 
 function Movies(props) {
   // destructing props
-  const { title, movies, setMovies } = props;
+  const { title, setMovies } = props;
+  const movies = useSelector((state) => state.movies.movies);
+
+  console.log(movies);
 
   /**
    * Buat fungsi tambah film 
@@ -29,7 +33,7 @@ function Movies(props) {
   return (
     <div className={styles.container}>
       <section className={styles.movies}>
-        <h2 className={styles.movies__title}>{props.title || "Latest Movie"}</h2>
+        <h2 className={styles.movies__title}>{title}</h2>
         <div className={styles.movie__container}>
           {/* 
           * Looping data movies: map

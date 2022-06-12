@@ -3,7 +3,7 @@ import StyledMovie from "./Movie.Styled";
 
 // Tangkap props
 function Movie(props) {
-    const {movie} = (props)
+    const {movie} = (props);
     
     return (
         <StyledMovie>

@@ -1,7 +1,7 @@
 // Import Halaman Home
-import { Route, Routes } from "react-router-dom";
-
 import Home from "./pages/Home";
+// Import Routes dan Route dari React Router
+import { Route, Routes } from "react-router-dom";
 import Create from "./pages/movie/Create";
 import Popular from "./pages/movie/Popular";
 import NowPlaying from "./pages/movie/NowPlaying";
@@ -12,9 +12,6 @@ import { ThemeProvider } from "styled-components";
 import theme from "./components/utils/constant/theme";
 import GlobalStyle from "./components/GlobalStyle";
 import Detail from "./pages/movie/Detail";
-
-
-
 
 function App() {
   /**
