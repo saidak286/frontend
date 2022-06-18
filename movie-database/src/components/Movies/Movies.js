@@ -8,8 +8,6 @@ function Movies(props) {
   const { title, setMovies } = props;
   const movies = useSelector((state) => state.movies.movies);
 
-  console.log(movies);
-
   /**
    * Buat fungsi tambah film 
    * dijalankan ketika tombol diklik
@@ -44,8 +42,8 @@ function Movies(props) {
             return <Movie key={movie.id} movie={movie} />
           })}
         </div>
-        {/* Menambahkan event on Click */}
-        <button onClick={tambahFilm}>Add Movie</button>
+        {/* // Menambahkan event on Click
+        <button onClick={tambahFilm}>Add Movie</button> */}
       </section>
     </div>
   );

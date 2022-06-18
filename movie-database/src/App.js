@@ -8,8 +8,8 @@ import NowPlaying from "./pages/movie/NowPlaying";
 import TopRated from "./pages/movie/TopRated";
 import Layout from "./layout";
 // Import Theme Provider
+import theme from "./utils/constant/theme";
 import { ThemeProvider } from "styled-components";
-import theme from "./components/utils/constant/theme";
 import GlobalStyle from "./components/GlobalStyle";
 import Detail from "./pages/movie/Detail";
 

@@ -2,7 +2,7 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Open+Sans:wght@300&family=Poppins:wght@200&display=swap');
 
     * {
         margin: 0;
@@ -20,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
             monospace;
      }
 
-    a {
+    a { 
         text-decoration: none;
     }
 `;

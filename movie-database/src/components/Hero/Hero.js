@@ -2,7 +2,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Button from "../UI/Button";
-import ENDPOINTS from "../utils/constant/endpoints";
+import ENDPOINTS from "../../utils/constant/endpoints";
 import styles from "./Hero.module.css";
 import StyledHero from "./Hero.Styled";
 
@@ -12,7 +12,6 @@ function Hero() {
   const genres = movie && movie.genres.map((genre) => genre.name).join(", ");
   const trailer = movie && `https://www.youtube.com/watch?v=${movie.videos.results[0].key}`;
 
-  console.log(trailer);
   // async function fetchMovie() {
   //   // Melakukan side effect: fecth data movie (api)
   //   const response = await fetch("https://www.omdbapi.com/?apikey=fcf50ae6&i=tt2975590");

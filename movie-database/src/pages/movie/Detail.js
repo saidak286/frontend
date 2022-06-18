@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import DetailMovie from "../../components/DetailMovie";
 import Movies from "../../components/Movies/Movies";
-import ENDPOINTS from "../../components/utils/constant/endpoints";
+import ENDPOINTS from "../../utils/constant/endpoints";
 
 function Detail() {
     const { id } = useParams();
@@ -19,8 +19,6 @@ function Detail() {
         const response = await axios(ENDPOINTS.RECOMMENDATION(id));
         setmovies(response.data.results);
     }
-
-    console.log(movies);
 
     return(
         <>

@@ -1,6 +1,6 @@
 // import createSlice
 import { createSlice } from "@reduxjs/toolkit";
-import data from "../../components/utils/constant/data";
+import data from "../../utils/constant/data";
 
 /**
  * Buat Slice: untuk generate action and reduer.
@@ -15,14 +15,17 @@ const movieSlice = createSlice({
         addMovie(state, action) { 
             state.movies.push(action.payload)
         },
+        updateMovies(state, action) {
+            state.movies = action.payload;
+        },
         deleteMovie() {}
     },
 });
 
 // generate action and reducers
 const movieReducer = movieSlice.reducer;
-const { addMovie } = movieSlice.actions;
+const { addMovie, updateMovies } = movieSlice.actions;
 
 // export action and reducers
 export default movieReducer;
-export { addMovie };
+export { addMovie, updateMovies };
