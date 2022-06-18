@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/https//saidak286.github.io/frontend/static/css/main.f093fe71.css",
+    "main.js": "/https//saidak286.github.io/frontend/static/js/main.b8fe88b9.js",
+    "static/js/787.d02d9e27.chunk.js": "/https//saidak286.github.io/frontend/static/js/787.d02d9e27.chunk.js",
+    "index.html": "/https//saidak286.github.io/frontend/index.html",
+    "main.f093fe71.css.map": "/https//saidak286.github.io/frontend/static/css/main.f093fe71.css.map",
+    "main.b8fe88b9.js.map": "/https//saidak286.github.io/frontend/static/js/main.b8fe88b9.js.map",
+    "787.d02d9e27.chunk.js.map": "/https//saidak286.github.io/frontend/static/js/787.d02d9e27.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f093fe71.css",
+    "static/js/main.b8fe88b9.js"
+  ]
+}
