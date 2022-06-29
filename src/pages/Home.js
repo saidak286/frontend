@@ -6,7 +6,6 @@ import Hero from "../components/Hero";
 import ENDPOINTS from "../utils/constants/endpoint";
 
 function Home() {
-  // const { globalSelection } = props;
   // membuat state global
   const [ global, setGlobal] = useState([]);
   

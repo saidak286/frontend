@@ -5,60 +5,66 @@ import StyledForm from "./index.Styled";
 import { updateCovids } from "../../feature/covidSlice";
 
 function Form(props) {
-    const {provinces, setProvinces} = props;
+    const {provinces} = props;
     const dispatch = useDispatch();
-    // const data = data.provinces
-    const [provinsi, setProvinsi] = useState("");
-    const [status, setStatus] = useState("");
-    const [jumlah, setJumlah] = useState("");
-
+    // Membuat state dalam bentuk object
+    const [ formData, setFormData ] = useState({
+        provinsi: "",
+        status: "",
+        jumlah: "",
+    })
     // Membuat state title dan data error/empty
-    const [isProvinsiError, setIsProvinsiError] = useState(false);
-    const [isStatusError, setIsStatusError] = useState(false);
-    const [isJumlahError, setIsJumlahError] = useState(false);
+    const [ isError, setIsError ] = useState({
+        isProvinsiError: false,
+        isStatusError: false,
+        isJumlahError: false,
+    })
 
-    function handleProvinsi(e) {
-        setProvinsi(e.target.value);
+    function handleChange(e) {
+        const { name, value } = e.target;
+        setFormData({...formData,[name]: value});
     }
+    const { provinsi, status, jumlah } = formData;
 
-    function handleStatus(e) {
-        setStatus(e.target.value);
-    }
-
-    function handleJumlah(e) {
-        setJumlah(e.target.value);
-    }
-
-    function handleSubmit(e) {
-        e.preventDefault();
-
-        // Jika title kosong, maka set error title run
+    function validate() {
+        // Jika provinsi kosong, maka set error provinsi run
         if (provinsi === "") {
-            setIsProvinsiError(true);
+            setIsError({...isError, isProvinsiError: true});
+            return false;
         }
-        // Jika title kosong, maka set error date true
+        // Jika provinsi kosong, maka set error status true
         else if (status === "") {
-            setIsProvinsiError(false);
-            setIsStatusError(true);
+            setIsError({...isError, isProvinsiError: false, isStatusError: true});
+            return false;
         }
-        // Jika title dan date kosong, maka set error poster true
+        // Jika provinsi dan status kosong, maka set error jumlah true
         else if (jumlah === "") {
-            setIsProvinsiError(false);
-            setIsStatusError(false);
-            setIsJumlahError(true);
+            setIsError({...isError, isProvinsiError: false, isStatusError: false, isJumlahError: true});
+            return false;
         }
 
         else {
-             // Siapkan movie yang ingin diinput
-            const movie = {
-                provinsi: provinsi,
-                status: status,
-                jumlah: jumlah,
-            };
-
-            dispatch(updateCovids(movie));
+            setIsError({
+                isProvinsiError: false,
+                isStatusError: false,
+                isJumlahError: false,
+            });
+            return true;
         }
     }
+
+    function submitProvinces() {
+        dispatch(updateCovids(formData));
+    }
+
+    // Handle form ketika disubmit
+    function handleSubmit(e) {
+        // Mencegah perilaku default: refresh
+        e.preventDefault();
+
+        validate() && submitProvinces();
+    }
+
 
     return (
         <StyledForm onSubmit={handleSubmit}>
@@ -72,7 +78,7 @@ function Form(props) {
                     <h2>Form Covid</h2>
                     <div className="form__covid">
                         <label >Provinsi</label>
-                        <select onChange={handleProvinsi} value={provinsi}>
+                        <select onChange={handleChange} id="provinsi" name="provinsi" value={provinsi}>
                             <option>--Select One--</option>
                             {provinces.map((data) => (
                                 <option key={data.kota} value={data.kota}>{data.kota}</option>
@@ -82,11 +88,11 @@ function Form(props) {
                         Jika error title true: muncul error 
                         Jika tidak, munculkan string kosong  
                         */}
-                        {isProvinsiError && <Alert>Provinsi Wajib Diisi </Alert>}
+                        {isError.isProvinsiError && <Alert>Provinsi Wajib Diisi </Alert>}
                     </div>
                     <div className="form__covid">
                         <label>Status</label>
-                        <select onChange={handleStatus}>
+                        <select onChange={handleChange} id="status" name="status" value={status}>
                             <option>--Select One--</option>
                             <option value="kasus">Positif</option>
                             <option value="sembuh">Sembuh</option>
@@ -97,16 +103,16 @@ function Form(props) {
                         Jika error title true: muncul error 
                         Jika tidak, munculkan string kosong  
                         */}
-                        {isStatusError && <Alert>Status Wajib Diisi </Alert>}
+                        {isError.isStatusError && <Alert>Status Wajib Diisi </Alert>}
                     </div>
                     <div className="form__covid">
                         <label>Jumlah</label>
-                        <input type="text" onChange={handleJumlah} value={jumlah}/>
+                        <input type="text" onChange={handleChange} id="jumlah" name="jumlah" value={jumlah}/>
                          {/* 
                         Jika error title true: muncul error 
                         Jika tidak, munculkan string kosong  
                         */}
-                        {isJumlahError && <Alert>Jumlah Wajib Diisi </Alert>}
+                        {isError.isJumlahError && <Alert>Jumlah Wajib Diisi </Alert>}
                     </div>
                     <div>
                         <button>Submit</button>

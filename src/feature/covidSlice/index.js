@@ -9,18 +9,18 @@ import data from "../../utils/constants/provinces";
 const covidSlice = createSlice({
     name: "Covid Slice",
     initialState: {
-        covids: data.provinces,
+        provins: data.provinces,
     },
     reducers: {
         updateCovids(state, action) {
-            const {covids} = state;
-            const {provinces, status, jumlah} = action.payload;
+            const {provins} = state;
+            const {provinsi, status, jumlah} = action.payload;
 
             //Find index of specific object using findIndex method.    
-            const objIndex = covids.findIndex((obj => obj.kota === provinces));
+            const objIndex = provins.findIndex((obj) => obj.kota === provinsi);
 
             //Update object's name property.
-            covids[objIndex][status] = parseInt(covids[objIndex][status]) + parseInt(jumlah);
+            provins[objIndex][status] = parseInt(provins[objIndex][status]) + parseInt(jumlah);
         },
     },
 });
